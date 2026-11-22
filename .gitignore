@@ -1,5 +1,6 @@
 # dependencies
 /node_modules
+node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -14,28 +15,39 @@
 
 # next.js
 /.next/
+.next/
 /out/
+out/
 
 # production
 /build
 
 # misc
 .DS_Store
+**/.DS_Store
 *.pem
 
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
 # local env files
+.env
 .env*.local
+.env.local
+.env.production
+.env.development
 
 # vercel
 .vercel
 
 # playwright artifacts
 .playwright-mcp/
+.playwright/
+playwright-report/
+test-results/
 
 # typescript
 *.tsbuildinfo
