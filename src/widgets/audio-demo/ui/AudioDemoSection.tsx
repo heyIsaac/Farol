@@ -42,7 +42,12 @@ export const AudioDemoSection: React.FC = () => {
     <section className="relative z-20 bg-white py-16 overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Interactive Audio Button */}
-        <div className="mb-12 flex justify-center">
+        <div
+          className="mb-12 flex justify-center"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="100"
+        >
           <button
             onClick={handlePlayAudio}
             disabled={isPlaying}
@@ -82,7 +87,12 @@ export const AudioDemoSection: React.FC = () => {
         </div>
 
         {/* 3D Spline Interactive Asset */}
-        <div className="relative w-full h-[500px] flex items-center justify-center overflow-visible">
+        <div
+          className="relative w-full h-[500px] flex items-center justify-center overflow-visible"
+          data-aos="fade-up"
+          data-aos-duration="1200"
+          data-aos-delay="200"
+        >
           <div className="w-full max-w-[800px] h-[500px] invisible pointer-events-none" />
           <div
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] max-w-[1600px] h-[140vh] max-h-[1000px] scale-[0.6] z-0 pointer-events-auto"

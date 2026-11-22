@@ -49,7 +49,7 @@ export const SolutionSection: React.FC = () => {
             const p = self.progress;
             if (p <= 0.3) {
               setActiveStep(0);
-            } else if (p <= 0.65) {
+            } else if (p > 0.3 && p <= 0.65) {
               setActiveStep(1);
             } else {
               setActiveStep(2);
@@ -81,7 +81,7 @@ export const SolutionSection: React.FC = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-20 max-w-4xl mx-auto px-4 text-center flex flex-col items-center justify-center">
+        <div className="relative z-20 max-w-4xl mx-auto px-4 text-center flex flex-col items-center justify-center w-full">
           {/* Farol Icon */}
           <div ref={iconRef} className="mb-8">
             <Image
@@ -93,40 +93,34 @@ export const SolutionSection: React.FC = () => {
             />
           </div>
 
-          {/* Text Container with 3 phases */}
-          <div className="relative min-h-[160px] sm:min-h-[220px] w-full flex items-center justify-center">
+          {/* Text Container with soft blur cross-fade without display:none */}
+          <div className="text-morph-container">
             {/* Step 1 */}
             <div
-              className={`transition-all duration-700 ease-out transform ${
-                activeStep === 0
-                  ? 'opacity-100 blur-none scale-100 block'
-                  : 'opacity-0 blur-md scale-95 hidden'
+              className={`text-morph-line ${
+                activeStep === 0 ? 'active' : ''
               }`}
             >
-              <h2 className="text-3xl sm:text-5xl md:text-6xl font-normal font-rethink text-[#333333] leading-tight max-w-3xl">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-normal font-rethink text-[#333333] leading-tight max-w-3xl mx-auto">
                 Mas e se existisse uma voz que guiasse cada pessoa,
               </h2>
             </div>
 
             {/* Step 2 */}
             <div
-              className={`transition-all duration-700 ease-out transform ${
-                activeStep === 1
-                  ? 'opacity-100 blur-none scale-100 block'
-                  : 'opacity-0 blur-md scale-95 hidden'
+              className={`text-morph-line ${
+                activeStep === 1 ? 'active' : ''
               }`}
             >
-              <h2 className="text-3xl sm:text-5xl md:text-6xl font-normal font-rethink text-[#333333] leading-tight max-w-3xl">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-normal font-rethink text-[#333333] leading-tight max-w-3xl mx-auto">
                 exatamente no que ela precisa?
               </h2>
             </div>
 
             {/* Step 3 */}
             <div
-              className={`transition-all duration-700 ease-out transform ${
-                activeStep === 2
-                  ? 'opacity-100 blur-none scale-100 block'
-                  : 'opacity-0 blur-md scale-95 hidden'
+              className={`text-morph-line ${
+                activeStep === 2 ? 'active' : ''
               }`}
             >
               <h2 className="text-3xl sm:text-5xl md:text-6xl font-normal font-rethink text-[#333333] leading-tight">

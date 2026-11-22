@@ -31,17 +31,25 @@ export const TestimonialsSection: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <h2 className="text-center mb-16 text-3xl sm:text-4xl md:text-5xl font-semibold font-rethink text-[#54BF44] leading-tight">
+        <h2
+          className="text-center mb-16 text-3xl sm:text-4xl md:text-5xl font-semibold font-rethink text-[#54BF44] leading-tight"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+        >
           A voz do Farol chegou até eles
           <br className="hidden sm:inline" /> — e fez diferença.
         </h2>
 
         {/* Testimonials Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          {TESTIMONIALS.map((t) => (
+          {TESTIMONIALS.map((t, idx) => (
             <div
               key={t.id}
               className="p-8 rounded-[32px] bg-[#DEF3C6] flex flex-col justify-between transition-all duration-300 hover:shadow-md"
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay={String(200 + idx * 100)}
             >
               <p className="text-base text-[#263228] font-montserrat leading-relaxed mb-6">
                 &ldquo;{t.quote}&rdquo;
@@ -71,7 +79,12 @@ export const TestimonialsSection: React.FC = () => {
 
         {/* Floating Plant Image */}
         <div className="mt-16 sm:mt-24 flex justify-center">
-          <div className="relative animate-[float-plant_4s_ease-in-out_infinite] max-w-[600px] w-full flex justify-center">
+          <div
+            className="relative animate-[float-plant_4s_ease-in-out_infinite] max-w-[600px] w-full flex justify-center"
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+            data-aos-delay="300"
+          >
             <Image
               ref={plantRef}
               src="/assets/imgs/plant.webp"

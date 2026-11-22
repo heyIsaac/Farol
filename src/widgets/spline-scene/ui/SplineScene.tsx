@@ -15,7 +15,12 @@ export const SplineScene: React.FC<SplineSceneProps> = ({
 }) => {
   return (
     <section className={`relative overflow-hidden bg-white min-h-[500px] flex items-center justify-center ${className}`}>
-      <div className="relative w-full h-[500px] flex items-center justify-center overflow-visible">
+      <div
+        className="relative w-full h-[500px] flex items-center justify-center overflow-visible"
+        data-aos="fade-up"
+        data-aos-duration="1200"
+        data-aos-delay="400"
+      >
         {/* Placeholder to reserve vertical layout space */}
         <div className="w-full max-w-[800px] h-[500px] invisible pointer-events-none" />
 

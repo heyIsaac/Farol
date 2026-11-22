@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Rethink_Sans, Montserrat } from 'next/font/google';
 import Script from 'next/script';
+import { AosInit } from '@/shared/ui/AosInit';
 import './globals.css';
 
 const rethinkSans = Rethink_Sans({
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${rethinkSans.variable} ${montserrat.variable}`}>
       <body className="min-h-screen bg-white font-sans text-[#263228] antialiased selection:bg-[#DEF3C6] selection:text-[#263228]">
+        <AosInit />
         {children}
         <Script
           type="module"

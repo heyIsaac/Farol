@@ -92,23 +92,44 @@ export const FeaturesSection: React.FC = () => {
           >
             {/* Text side */}
             <div className="w-full lg:w-5/12 flex flex-col items-start text-left">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#54BF44] font-rethink leading-[1.15] mb-6 whitespace-pre-line">
+              <h2
+                className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#54BF44] font-rethink leading-[1.15] mb-6 whitespace-pre-line"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="100"
+              >
                 {feature.title}
               </h2>
-              <div className="text-base sm:text-lg text-[#263228] font-montserrat font-normal leading-relaxed mb-8 max-w-lg">
+              <div
+                className="text-base sm:text-lg text-[#263228] font-montserrat font-normal leading-relaxed mb-8 max-w-lg"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="200"
+              >
                 {feature.description}
               </div>
-              <Button
-                asChild
-                className="bg-[#54BF44] hover:bg-[#459A37] text-white rounded-full px-8 py-6 text-base font-semibold font-rethink shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+              <div
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="300"
               >
-                <Link href={feature.ctaLink}>{feature.ctaText}</Link>
-              </Button>
+                <Button
+                  asChild
+                  className="bg-[#54BF44] hover:bg-[#459A37] text-white rounded-full px-8 py-6 text-base font-semibold font-rethink shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+                >
+                  <Link href={feature.ctaLink}>{feature.ctaText}</Link>
+                </Button>
+              </div>
             </div>
 
             {/* Media side */}
             <div className="w-full lg:w-6/12 flex items-center justify-center">
-              <div className="relative w-full max-w-[540px] aspect-square rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div
+                className="relative w-full max-w-[540px] aspect-square rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                data-aos={feature.imageLeft ? 'fade-right' : 'fade-left'}
+                data-aos-duration="1000"
+                data-aos-delay="200"
+              >
                 <Image
                   src={feature.image}
                   alt={feature.title}

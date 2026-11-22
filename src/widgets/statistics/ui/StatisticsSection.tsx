@@ -30,8 +30,11 @@ export const StatisticsSection: React.FC = () => {
           invalidateOnRefresh: true,
           onUpdate: (self) => {
             const p = self.progress;
-            if (p < 0.5) {
+            if (p <= 0.46) {
               setActiveTextIndex(0);
+            } else if (p > 0.46 && p < 0.54) {
+              // Smooth intermediate cross-fade zone
+              setActiveTextIndex(-1);
             } else {
               setActiveTextIndex(1);
             }
@@ -106,38 +109,36 @@ export const StatisticsSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Text Lines overlay */}
-          <div className="relative z-20 text-center max-w-4xl px-4 pointer-events-auto">
-            {/* Phrase 1 */}
-            <div
-              className={`transition-all duration-700 ease-out transform ${
-                activeTextIndex === 0
-                  ? 'opacity-100 blur-none scale-100 block'
-                  : 'opacity-0 blur-md scale-95 hidden'
-              }`}
-            >
-              <h2 className="text-3xl sm:text-5xl md:text-6xl font-normal font-rethink leading-tight text-white">
-                Desastres naturais aumentaram
-                <span className="block mt-2 text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#DEF3C6] font-rethink tracking-wider">
-                  250% EM 4 ANOS.
-                </span>
-              </h2>
-            </div>
+          {/* Text Lines with soft blur morphing without display:none */}
+          <div className="relative z-20 text-center w-full max-w-4xl px-4 pointer-events-auto">
+            <div className="text-morph-container">
+              {/* Phrase 1 */}
+              <div
+                className={`text-morph-line ${
+                  activeTextIndex === 0 ? 'active' : ''
+                }`}
+              >
+                <h2 className="text-3xl sm:text-5xl md:text-6xl font-normal font-rethink leading-tight text-white">
+                  Desastres naturais aumentaram
+                  <span className="block mt-2 text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#DEF3C6] font-rethink tracking-wider">
+                    250% EM 4 ANOS.
+                  </span>
+                </h2>
+              </div>
 
-            {/* Phrase 2 */}
-            <div
-              className={`transition-all duration-700 ease-out transform ${
-                activeTextIndex === 1
-                  ? 'opacity-100 blur-none scale-100 block'
-                  : 'opacity-0 blur-md scale-95 hidden'
-              }`}
-            >
-              <h2 className="text-3xl sm:text-5xl md:text-6xl font-normal font-rethink leading-tight text-white">
-                Mas para muitos, a ajuda ainda é
-                <span className="block mt-2 text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#DEF3C6] font-rethink tracking-wider leading-tight">
-                  LENTA, DESCOORDENADA E INACESSÍVEL.
-                </span>
-              </h2>
+              {/* Phrase 2 */}
+              <div
+                className={`text-morph-line ${
+                  activeTextIndex === 1 ? 'active' : ''
+                }`}
+              >
+                <h2 className="text-3xl sm:text-5xl md:text-6xl font-normal font-rethink leading-tight text-white">
+                  Mas para muitos, a ajuda ainda é
+                  <span className="block mt-2 text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#DEF3C6] font-rethink tracking-wider leading-tight">
+                    LENTA, DESCOORDENADA E INACESSÍVEL.
+                  </span>
+                </h2>
+              </div>
             </div>
           </div>
         </div>
